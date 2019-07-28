@@ -1,0 +1,19 @@
+1，下载
+	git clone git://www.aleph1.co.uk/yaffs2 
+	
+2，解压，对 patch-ker.h增加执行权限
+	> sudo chmod u+x patch-ker.sh
+	> ./patch-ker.h c m 内核目录
+
+3，更新kernel支持yaffs2
+	> make menuconfig			// 在文件系统中增加 yaffs2的支持
+
+4，make uImage 编译
+
+5，生成mkyaffs2image工具
+	> cd utils
+	> make
+	
+6，打包生成yaffs2文件系统
+	> mkyaffs2image first_fs first_fs.yaffs2
+	
